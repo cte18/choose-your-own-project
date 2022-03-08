@@ -1,6 +1,6 @@
 #########################################################################################
 # "Choose Your Own Project - Predicting Heart Disease"
-# for Data Science Capstone Course, March 2022
+# for Data Science Capstone Course, 8 March 2022
 #########################################################################################
 #
 # The aim of this project was to explore a number of different models that might be
@@ -178,7 +178,7 @@ knitr::kable(count_by_target,
 
 # Display graphs for each attribute, as follows.
 #
-# For each continuous attribute, display a histogram that shows the distribution of 
+# For each numerical attribute, display a histogram that shows the distribution of 
 # patients with and without heart disease (in red and green respectively), overlaid on
 # each other.
 #

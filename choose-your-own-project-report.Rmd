@@ -1,7 +1,7 @@
 ---
 title: "Data Science Capstone Project: Predicting Heart Disease"
 author: "Catherine Edis"
-date: "March 2022"
+date: "8 March 2022"
 urlcolor: blue
 output:
   pdf_document:
@@ -35,18 +35,18 @@ As described in the *heart-disease.names* file provided with the dataset, the da
 
 Attribute | Description                                        | Type
 --------- | -------------------------------------------------- | ----
-age       | Age of the patient, in years                       | Continuous
+age       | Age of the patient, in years                       | Numerical
 sex       | Sex of the patient                                 | Categorical
 cp        | Type of chest pain                                 | Categorical
-trestbps	| Resting blood pressure                             | Continuous
-chol 	    | Serum cholesterol                                  | Continuous
+trestbps	| Resting blood pressure                             | Numerical
+chol 	    | Serum cholesterol                                  | Numerical
 fbs	      | Fasting blood sugar                                | Categorical
 restecg	  | Resting electrocardiographic (ECG) results         | Categorical
-thalach	  | Maximum heart rate achieved                        | Continuous
+thalach	  | Maximum heart rate achieved                        | Numerical
 exang	    | Exercise-induced angina                            | Categorical
-oldpeak	  | ST depression induced by exercise relative to rest | Continuous
+oldpeak	  | ST depression induced by exercise relative to rest | Numerical
 slope	    | Slope of peak exercise ST segment                  | Categorical
-ca	      | Number of major vessels colored by fluoroscopy     | Continuous
+ca	      | Number of major vessels colored by fluoroscopy     | Numerical
 thal	    | Thallium stress test result                        | Categorical
 target    | Heart disease diagnosis                            | Categorical
 
@@ -335,7 +335,7 @@ After reformatting, the dataset had:
 
 * 8 attributes with a type of *factor*, and with the factor levels labelled appropriately (for the 8 categorical attributes); and, 
 
-* 6 attributes with a type of *number* (for the 6 continuous attributes).
+* 6 attributes with a type of *number* (for the 6 numerical attributes).
 
 
 ## Further Exploration of the Data
@@ -358,11 +358,11 @@ knitr::kable(count_by_target,
 
 ```
 
-There was a reasonable number of patients in each category, which was useful for modelling purposes.
+There was a reasonable number of patients in both categories, which was useful for modelling purposes.
 
-Next, each attribute was examined for any obvious correlation between it and the presence of heart disease. The method used to do this differed depending on whether the attribute was continuous or categorical.
+Next, each attribute was examined for any obvious correlation between it and the presence of heart disease. The method used to do this differed depending on whether the attribute was numerical or categorical.
 
-For each continuous attribute, a density plot was generated that showed the distribution of patients with and without heart disease (in red and green respectively), overlaid on each other. This visually showed whether there were any obvious differences across the values.
+For each numerical attribute, a density plot was generated that showed the distribution of patients with and without heart disease (in red and green respectively), overlaid on each other. This visually showed whether there were any obvious differences across the values.
 
 For each categorical attribute:
 
@@ -733,7 +733,7 @@ Finally, there appeared to be considerable correlation between a patient's thall
 
 After the above exploration of the data was completed, it appeared that the following attributes were most likely to be potential predictors for the presence of heart disease:
 
-* Age of the patient (*age* - continuous)
+* Age of the patient (*age* - numerical)
 
 * Sex of the patient (*sex* - categorical)
 
@@ -741,15 +741,15 @@ After the above exploration of the data was completed, it appeared that the foll
 
 * Resting electrocardiographic results (*restecg* - categorical)
 
-* Maximum heart rate achieved (*thalach* - continuous)
+* Maximum heart rate achieved (*thalach* - numerical)
 
 * Exercise-induced angina (*exang* - categorical)
 
-* ST depression induced by exercise relative to rest (*oldpeak* - continuous)
+* ST depression induced by exercise relative to rest (*oldpeak* - numerical)
 
 * Slope of the peak exercise ST segment (*slope* - categorical)
 
-* Number of major vessels colored by fluoroscopy (*ca* - continuous)
+* Number of major vessels colored by fluoroscopy (*ca* - numerical)
 
 * Thallium stress test result (*thal* - categorical)
 
